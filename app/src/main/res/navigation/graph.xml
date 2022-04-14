@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/productFeedFragment">
+
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="com.suveybesena.shoppingapp.presentation.basket.BasketFragment"
+        android:label="fragment_basket"
+        tools:layout="@layout/fragment_basket" >
+        <action
+            android:id="@+id/action_basketFragment_to_productFeedFragment"
+            app:destination="@id/productFeedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFeedFragment"
+        android:name="com.suveybesena.shoppingapp.presentation.productfeed.ProductFeedFragment"
+        android:label="ProductFeedFragment"
+        tools:layout="@layout/fragment_product_feed">
+        <action
+            android:id="@+id/action_productFeedFragment_to_basketFragment"
+            app:destination="@id/basketFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        //Navigation
+        def nav_version = "2.3.0"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+
+        //Hilt
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.38.1")
+    }
+}
+    plugins {
+        id 'com.android.application' version '7.1.1' apply false
+        id 'com.android.library' version '7.1.1' apply false
+        id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
+        id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.0' apply false
+    }
+
+    task clean(type: Delete) {
+        delete rootProject.buildDir
+    }

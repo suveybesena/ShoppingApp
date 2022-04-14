@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/drawable/ic_like_border.xml" value="0.1725" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/drawable/ic_shopping_basket_black_24dp.xml" value="0.1425" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/drawable/item_bg.xml" value="0.1" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/activity_main.xml" value="0.2609375" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/bottom_navigation_bar.xml" value="0.1414141414141414" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_basket.xml" value="0.275" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_product_feed.xml" value="0.264" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/shopping_item.xml" value="0.2" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/menu/menu_items.xml" value="0.275" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
