@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.suveybesena.shoppingapp.common.Resources
 import com.suveybesena.shoppingapp.databinding.FragmentProductFeedBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,11 +15,12 @@ class ProductFeedFragment : Fragment() {
 
     private val viewModel: ProductFeedViewModel by viewModels()
     private lateinit var binding: FragmentProductFeedBinding
-    lateinit var productAdapter : ProductFeedAdapter
+    lateinit var productAdapter: ProductFeedAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,17 +39,9 @@ class ProductFeedFragment : Fragment() {
 
     private fun observeData() {
 
-        viewModel.products.observe(viewLifecycleOwner) { response ->
-            when (response) {
-                is Resources.success -> {
-                    response.data?.let { productResponse ->
-                        productAdapter.differ.submitList(productResponse)
-                        println(productResponse)
-                    }
-                }
-                else -> {}
+        viewModel._products.observe(viewLifecycleOwner) { resource ->
+                productAdapter.differ.submitList(resource)
             }
-        }
     }
 
     private fun setupRecyclerView() {

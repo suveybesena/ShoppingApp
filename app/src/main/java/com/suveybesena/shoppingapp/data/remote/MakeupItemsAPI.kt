@@ -1,5 +1,6 @@
 package com.suveybesena.shoppingapp.data.remote
 
+import com.suveybesena.shoppingapp.data.remote.model.MakeupItemsResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -10,5 +11,5 @@ interface MakeupItemsAPI {
     suspend fun getProducts(
         @Query("brand")
         brandName: String
-    ): Response<MakeupItemsResponse>
+    ): MakeupItemsResponse
 }

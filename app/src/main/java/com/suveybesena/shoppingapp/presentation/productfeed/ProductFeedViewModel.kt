@@ -3,38 +3,53 @@ package com.suveybesena.shoppingapp.presentation.productfeed
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.suveybesena.shoppingapp.common.Resources
-import com.suveybesena.shoppingapp.data.remote.MakeupItemsResponse
-import com.suveybesena.shoppingapp.domain.repository.ShoppingRepository
+import com.suveybesena.shoppingapp.common.Resource
+import com.suveybesena.shoppingapp.data.remote.model.MakeupItemsResponse
+import com.suveybesena.shoppingapp.domain.usecase.GetAllProductItemsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
-class ProductFeedViewModel @Inject constructor(var repository: ShoppingRepository) :ViewModel() {
+class ProductFeedViewModel @Inject constructor(var getAllProductItemsUseCase: GetAllProductItemsUseCase) :ViewModel() {
 
-    val products: MutableLiveData<Resources<MakeupItemsResponse>> = MutableLiveData()
+    private val products: MutableLiveData<MakeupItemsResponse> = MutableLiveData()
+    val _products = products
+    private val loadingState = MutableLiveData<Boolean?>()
+    val _loadingState = loadingState
+    private val errorState = MutableLiveData<String?>()
+    val _errorState = errorState
 
     init {
-        products("maybelline")
+        getProducts("maybelline")
     }
 
-    fun products(brandName: String) = viewModelScope.launch {
-        products.postValue(Resources.loading())
-        val response = repository.getProducts(brandName)
-        products.postValue(handleNewsResponse(response))
-    }
+  fun getProducts (brandName: String){
+      viewModelScope.launch {
+          getAllProductItemsUseCase.invoke(brandName).collect { resource->
+              when(resource){
+                  is Resource.Success -> {
+                      products.value = resource.data as MakeupItemsResponse
+                      loadingState.value = false
+                      errorState.value = false.toString()
+                  }
+                  is Resource.Error -> {
+                      products.value = null
+                      loadingState.value = false
 
-    private fun handleNewsResponse(response: Response<MakeupItemsResponse>): Resources<MakeupItemsResponse> {
-        if (response.isSuccessful) {
-            response.body()?.let { resultResponse ->
-                return resultResponse.let {
-                    Resources.success(it)
-                }
-            }
-        }
-        return Resources.error(response.message())
-    }
+                  }
+
+                  is Resource.Loading -> {
+                      products.value = null
+                      loadingState.value = true
+                      errorState.value = null
+                  }
+              }
+
+          }
+      }
+
+  }
 
 }

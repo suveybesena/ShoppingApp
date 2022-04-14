@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.suveybesena.shoppingapp.R
-import com.suveybesena.shoppingapp.data.remote.MakeupItemResponseItem
+import com.suveybesena.shoppingapp.data.remote.model.MakeupItemResponseItem
 import kotlinx.android.synthetic.main.shopping_item.view.*
 
 class ProductFeedAdapter  : RecyclerView.Adapter<ProductFeedAdapter.ProductVH>() {

@@ -1,4 +1,4 @@
-package com.suveybesena.shoppingapp.data.remote
+package com.suveybesena.shoppingapp.data.remote.model
 
 
 import com.google.gson.annotations.SerializedName
