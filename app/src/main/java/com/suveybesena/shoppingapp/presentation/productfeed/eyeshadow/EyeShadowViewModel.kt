@@ -1,4 +1,4 @@
-package com.suveybesena.shoppingapp.presentation.productfeed
+package com.suveybesena.shoppingapp.presentation.productfeed.eyeshadow
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,21 +13,21 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ProductFeedViewModel @Inject constructor(var getAllProductItemsUseCase: GetAllProductItemsUseCase) :
-    ViewModel() {
+class EyeShadowViewModel @Inject constructor(val getAllProductItemsUseCase: GetAllProductItemsUseCase) :ViewModel() {
 
     private val uiState = MutableLiveData<ProductFeedUiState>()
-    val _uiState = uiState
+    var _uiState = uiState
 
     init {
-        getProducts("maybelline")
+        getEyeshadowItem("eyeshadow")
     }
 
-    fun getProducts(brandName: String) {
+    fun getEyeshadowItem (categoryName : String){
+
         viewModelScope.launch {
-            getAllProductItemsUseCase.invoke(brandName).collect { resource ->
-                when (resource) {
-                    is Resource.Success -> {
+            getAllProductItemsUseCase.invoke(categoryName).collect { resource->
+                when(resource){
+                    is Resource.Success ->{
                         uiState.value =
                             ProductFeedUiState(
                                 productItems = resource.data as MakeupItemsResponse,
@@ -35,26 +35,29 @@ class ProductFeedViewModel @Inject constructor(var getAllProductItemsUseCase: Ge
                                 isLoading = false
                             )
                     }
-                    is Resource.Error -> {
-                        ProductFeedUiState(
-                            productItems = null,
-                            errorMessage = resource.message as String,
-                            isLoading = false
-                        )
-                    }
-
-                    is Resource.Loading -> {
+                    is Resource.Loading ->{
                         ProductFeedUiState(
                             productItems = null,
                             errorMessage = null,
                             isLoading = true
                         )
                     }
+                    is Resource.Error ->{
+                        ProductFeedUiState(
+                            productItems = null,
+                            errorMessage = resource.message as String,
+                            isLoading = false
+                        )
+                    }
                 }
 
             }
+
         }
 
+
     }
+
+
 
 }

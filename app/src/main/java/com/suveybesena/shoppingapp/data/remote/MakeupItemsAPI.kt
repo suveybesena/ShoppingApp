@@ -9,7 +9,7 @@ interface MakeupItemsAPI {
 
     @GET("api/v1/products.json")
     suspend fun getProducts(
-        @Query("brand")
-        brandName: String
+        @Query("product_type")
+        categoryName: String
     ): MakeupItemsResponse
 }

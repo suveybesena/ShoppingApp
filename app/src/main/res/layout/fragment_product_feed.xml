@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.productfeed.ProductFeedFragment">
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvShopping"
-        android:backgroundTint="#B5B5B5"
+    tools:context=".presentation.productfeed.ProductFeedFragment"
+    android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</GridLayout>
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary"
+        android:theme="@style/Theme.AppCompat.Light">
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?actionBarSize"
+        android:background="@color/color_primary"
+        app:tabTextColor="@color/color_accent"
+        app:tabGravity="fill"
+        app:tabMode="fixed" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpProductFeed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

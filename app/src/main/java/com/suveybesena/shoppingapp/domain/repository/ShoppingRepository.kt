@@ -5,7 +5,7 @@ import javax.inject.Inject
 
 class ShoppingRepository @Inject constructor(private val api : MakeupItemsAPI) {
 
-    suspend fun getProducts(brandName: String) =
-        api.getProducts(brandName)
+    suspend fun getProducts(categoryName: String) =
+        api.getProducts(categoryName)
 
 }
