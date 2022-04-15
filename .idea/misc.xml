@@ -3,17 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/drawable/ic_bronzer.xml" value="0.221" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/drawable/ic_like_border.xml" value="0.1725" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/drawable/ic_profile.xml" value="0.1185" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/drawable/ic_shopping_basket_black_24dp.xml" value="0.1425" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/drawable/item_bg.xml" value="0.1" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/activity_main.xml" value="0.2609375" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/basket_item.xml" value="0.264" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/bottom_navigation_bar.xml" value="0.1414141414141414" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_basket.xml" value="0.275" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_eyeliner.xml" value="0.275" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_eyeshadow.xml" value="0.275" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_lipstick.xml" value="0.275" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_product_feed.xml" value="0.264" />
-        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/shopping_item.xml" value="0.2" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_web_view.xml" value="0.275" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/shopping_item.xml" value="0.6" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/menu/menu_items.xml" value="0.275" />
       </map>
     </option>

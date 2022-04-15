@@ -1,4 +1,4 @@
-package com.suveybesena.shoppingapp.presentation
+package com.suveybesena.shoppingapp.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

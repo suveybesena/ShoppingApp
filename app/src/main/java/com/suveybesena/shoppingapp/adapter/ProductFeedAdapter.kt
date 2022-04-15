@@ -1,4 +1,4 @@
-package com.suveybesena.shoppingapp.presentation.productfeed
+package com.suveybesena.shoppingapp.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.suveybesena.shoppingapp.R
 import com.suveybesena.shoppingapp.data.remote.model.MakeupItemResponseItem
+import com.suveybesena.shoppingapp.presentation.productfeed.mainfeed.OnClickButtonInterface
 import kotlinx.android.synthetic.main.shopping_item.view.*
 
-class ProductFeedAdapter  : RecyclerView.Adapter<ProductFeedAdapter.ProductVH>() {
+class ProductFeedAdapter (val onClickButtonInterface: OnClickButtonInterface) : RecyclerView.Adapter<ProductFeedAdapter.ProductVH>() {
     class ProductVH(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     private val differCallBack = object : DiffUtil.ItemCallback<MakeupItemResponseItem>() {
@@ -39,14 +40,21 @@ class ProductFeedAdapter  : RecyclerView.Adapter<ProductFeedAdapter.ProductVH>()
     }
 
     override fun onBindViewHolder(holder: ProductVH, position: Int) {
-        val products = differ.currentList[position]
+        val product = differ.currentList[position]
         holder.itemView.apply {
-            Glide.with(this).load(products.imageLink).into(ivProduct)
+            Glide.with(this).load(product.imageLink).into(ivProduct)
+            tvProductName.text = product.brand
+            tvProductPrice.text = "$ ${product.price}"
 
-
-            tvProductName.text = products.brand
-            tvProductPrice.text = "$ ${products.price}"
-
+            bvAdd.setOnClickListener {
+                product.productLink?.let { it1 ->
+                    product.id?.let { it2 ->
+                        onClickButtonInterface.onClick(bvAdd ,bvShop,bvWebsite,
+                            product
+                        )
+                    }
+                }
+            }
 
         }
     }

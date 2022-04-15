@@ -6,5 +6,4 @@ data class ProductFeedUiState(
     val isLoading: Boolean=false,
     val errorMessage:String?=null,
     val productItems : MakeupItemsResponse?
-
 )

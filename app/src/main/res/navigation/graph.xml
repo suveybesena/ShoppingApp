@@ -17,11 +17,23 @@
     </fragment>
     <fragment
         android:id="@+id/productFeedFragment"
-        android:name="com.suveybesena.shoppingapp.presentation.productfeed.ProductFeedFragment"
+        android:name="com.suveybesena.shoppingapp.presentation.productfeed.mainfeed.ProductFeedFragment"
         android:label="ProductFeedFragment"
         tools:layout="@layout/fragment_product_feed">
         <action
             android:id="@+id/action_productFeedFragment_to_basketFragment"
             app:destination="@id/basketFragment" />
+        <action
+            android:id="@+id/action_productFeedFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.suveybesena.shoppingapp.presentation.webview.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" >
+        <argument
+            android:name="weblink"
+            app:argType="string" />
     </fragment>
 </navigation>

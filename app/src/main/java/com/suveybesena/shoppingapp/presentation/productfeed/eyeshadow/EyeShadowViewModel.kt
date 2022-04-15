@@ -4,16 +4,21 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.suveybesena.shoppingapp.common.Resource
+import com.suveybesena.shoppingapp.data.remote.model.MakeupItemResponseItem
 import com.suveybesena.shoppingapp.data.remote.model.MakeupItemsResponse
 import com.suveybesena.shoppingapp.domain.uistate.ProductFeedUiState
 import com.suveybesena.shoppingapp.domain.usecase.GetAllProductItemsUseCase
+import com.suveybesena.shoppingapp.domain.usecase.InsertProductsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class EyeShadowViewModel @Inject constructor(val getAllProductItemsUseCase: GetAllProductItemsUseCase) :ViewModel() {
+class EyeShadowViewModel @Inject constructor(
+    val getAllProductItemsUseCase: GetAllProductItemsUseCase,
+    val insertProductsUseCase: InsertProductsUseCase
+) : ViewModel() {
 
     private val uiState = MutableLiveData<ProductFeedUiState>()
     var _uiState = uiState
@@ -22,12 +27,12 @@ class EyeShadowViewModel @Inject constructor(val getAllProductItemsUseCase: GetA
         getEyeshadowItem("eyeshadow")
     }
 
-    fun getEyeshadowItem (categoryName : String){
+    fun getEyeshadowItem(categoryName: String) {
 
         viewModelScope.launch {
-            getAllProductItemsUseCase.invoke(categoryName).collect { resource->
-                when(resource){
-                    is Resource.Success ->{
+            getAllProductItemsUseCase.invoke(categoryName).collect { resource ->
+                when (resource) {
+                    is Resource.Success -> {
                         uiState.value =
                             ProductFeedUiState(
                                 productItems = resource.data as MakeupItemsResponse,
@@ -35,14 +40,14 @@ class EyeShadowViewModel @Inject constructor(val getAllProductItemsUseCase: GetA
                                 isLoading = false
                             )
                     }
-                    is Resource.Loading ->{
+                    is Resource.Loading -> {
                         ProductFeedUiState(
                             productItems = null,
                             errorMessage = null,
                             isLoading = true
                         )
                     }
-                    is Resource.Error ->{
+                    is Resource.Error -> {
                         ProductFeedUiState(
                             productItems = null,
                             errorMessage = resource.message as String,
@@ -56,6 +61,11 @@ class EyeShadowViewModel @Inject constructor(val getAllProductItemsUseCase: GetA
         }
 
 
+    }
+    fun insertProduct(products : MakeupItemResponseItem){
+        viewModelScope.launch {
+            insertProductsUseCase.invoke(products).collect {  }
+        }
     }
 
 
