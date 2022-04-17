@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="5dp"
     android:layout_margin="20dp">
 
@@ -69,7 +69,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             style="@style/ProductName"
-            android:text="@string/productName"
+            tools:text="@string/productName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivProduct" />
 
@@ -78,7 +78,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             style="@style/ProductPrice"
-            android:text="@string/productPrice"
+            tools:text="@string/productPrice"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
 

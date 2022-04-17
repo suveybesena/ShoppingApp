@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -26,25 +27,24 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:padding="5dp"
-            android:text="@string/productName"
+            tools:text="@string/productName"
             app:layout_constraintStart_toEndOf="@id/ivBasketItem"
             app:layout_constraintTop_toTopOf="parent"
             style="@style/ProductName" />
 
         <TextView
             android:id="@+id/tvProductDesc"
-            android:text="@string/productDesc"
+            tools:text="@string/productDesc"
             app:layout_constraintStart_toEndOf="@id/ivBasketItem"
             app:layout_constraintTop_toBottomOf="@id/tvProductName"
             style="@style/ProductDescription" />
 
         <TextView
             android:id="@+id/tvProductPrice"
-            android:text="@string/productPrice"
+            tools:text="@string/productPrice"
             app:layout_constraintStart_toEndOf="@id/ivBasketItem"
             app:layout_constraintTop_toBottomOf="@id/tvProductDesc"
             style="@style/ProductPrice" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
