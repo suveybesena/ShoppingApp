@@ -1,6 +1,22 @@
-# ShoppingApp
+# <a name="1"></a> App Architecture
+Bu projede, Android'in önerdiği modern mimariyi anlamaya ve uygulamaya çalıştım. 
 
-Bu readme, developer.android.com'ın App Architecture ile ilgili dokümanından aldığım notların kendi projem ile örneklendirilmiş halidir. 
+Projede kullandığım teknolojiler,
+<ul>
+  <li>Room</li>
+  <li>Retrofit</li>
+  <li>Coroutines</li>
+   <li>Use Case</li>
+  <li>Ui State/Ui Event</li>
+  <li>Dependency Injection(Hilt)</li>
+   <li>Glide</li>
+  <li>WebView</li>
+  <li>View pager2</li>
+    <li>View Binding</li>
+</ul>
+
+<strong>Bu readme, developer.android.com'ın App Architecture ile ilgili dokümanından aldığım notların kendi projem ile örneklendirilmiş halidir. </strong>.
+
 
 ## <a name="2"></a> App Architecture
 
