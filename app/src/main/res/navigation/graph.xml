@@ -4,29 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/graph"
-    app:startDestination="@id/productFeedFragment">
+    app:startDestination="@id/mainFeedFragment">
 
     <fragment
         android:id="@+id/basketFragment"
-        android:name="com.suveybesena.shoppingapp.presentation.basket.BasketFragment"
+        android:name="com.suveybesena.shoppingapp.presentation.basketfeed.BasketFragment"
         android:label="fragment_basket"
-        tools:layout="@layout/fragment_basket" >
-        <action
-            android:id="@+id/action_basketFragment_to_productFeedFragment"
-            app:destination="@id/productFeedFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/productFeedFragment"
-        android:name="com.suveybesena.shoppingapp.presentation.productfeed.mainfeed.ProductFeedFragment"
-        android:label="ProductFeedFragment"
-        tools:layout="@layout/fragment_product_feed">
-        <action
-            android:id="@+id/action_productFeedFragment_to_basketFragment"
-            app:destination="@id/basketFragment" />
-        <action
-            android:id="@+id/action_productFeedFragment_to_webViewFragment"
-            app:destination="@id/webViewFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_basket" />
+
     <fragment
         android:id="@+id/webViewFragment"
         android:name="com.suveybesena.shoppingapp.presentation.webview.WebViewFragment"
@@ -35,5 +20,14 @@
         <argument
             android:name="weblink"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFeedFragment"
+        android:name="com.suveybesena.shoppingapp.presentation.mainfeed.MainFeedFragment"
+        android:label="fragment_main_feed"
+        tools:layout="@layout/fragment_main_feed" >
+        <action
+            android:id="@+id/action_mainFeedFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
     </fragment>
 </navigation>

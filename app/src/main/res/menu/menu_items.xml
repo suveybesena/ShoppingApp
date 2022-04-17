@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/productFeedFragment"
+        android:id="@+id/mainFeedFragment"
         android:icon="@drawable/ic_menu_symbol_of_three_parallel_lines_svgrepo_com"
         android:title="" />
 

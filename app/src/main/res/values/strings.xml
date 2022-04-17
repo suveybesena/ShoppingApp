@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">ShoppingApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Products">products</string>
+    <string name="subtotal">Subtotal :</string>
+    <string name="productName">Makeup</string>
+    <string name="productPrice">$80</string>
+    <string name="productDesc">"ürün açıklaması"</string>
 </resources>

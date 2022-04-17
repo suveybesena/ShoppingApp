@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/drawable/heyu.xml" value="0.143" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/drawable/ic_bronzer.xml" value="0.221" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/drawable/ic_like_border.xml" value="0.1725" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/drawable/ic_profile.xml" value="0.1185" />
@@ -15,9 +16,11 @@
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_eyeliner.xml" value="0.275" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_eyeshadow.xml" value="0.275" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_lipstick.xml" value="0.275" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_main_feed.xml" value="0.275" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_product_feed.xml" value="0.264" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/fragment_web_view.xml" value="0.275" />
-        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/shopping_item.xml" value="0.6" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/pb_sample.xml" value="0.275" />
+        <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/layout/shopping_item.xml" value="0.2" />
         <entry key="..\:/Users/SuveybeSena/AndroidStudioProjects/ShoppingApp/app/src/main/res/menu/menu_items.xml" value="0.275" />
       </map>
     </option>
