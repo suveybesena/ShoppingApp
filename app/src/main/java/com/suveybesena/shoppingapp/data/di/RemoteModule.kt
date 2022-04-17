@@ -1,7 +1,7 @@
 package com.suveybesena.shoppingapp.data.di
 
 import com.suveybesena.shoppingapp.common.Constants
-import com.suveybesena.shoppingapp.data.remote.MakeupItemsAPI
+import com.suveybesena.shoppingapp.data.remote.ProductAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,7 +33,7 @@ object RemoteModule {
 
     @Provides
     @Singleton
-    fun provideMyAPI(retrofit: Retrofit): MakeupItemsAPI {
-        return retrofit.create(MakeupItemsAPI::class.java)
+    fun provideMyAPI(retrofit: Retrofit): ProductAPI {
+        return retrofit.create(ProductAPI::class.java)
     }
 }

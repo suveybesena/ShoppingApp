@@ -3,7 +3,7 @@ package com.suveybesena.shoppingapp.data.di
 import android.content.Context
 import androidx.room.Room
 import com.suveybesena.shoppingapp.data.local.ProductDAO
-import com.suveybesena.shoppingapp.data.local.ProductsDatabase
+import com.suveybesena.shoppingapp.data.local.ProductDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,15 +17,14 @@ object LocalModule {
 
     @Provides
     @Singleton
-    fun provideDatabase(@ApplicationContext context: Context): ProductsDatabase =
-        Room.databaseBuilder(context, ProductsDatabase::class.java, "products_db")
+    fun provideDatabase(@ApplicationContext context: Context): ProductDatabase =
+        Room.databaseBuilder(context, ProductDatabase::class.java, "products_db")
             .fallbackToDestructiveMigration()
             .build()
 
-
     @Provides
     @Singleton
-    fun provideDao(productsDatabase: ProductsDatabase): ProductDAO {
-        return productsDatabase.productDao()
+    fun provideDao(productDatabase: ProductDatabase): ProductDAO {
+        return productDatabase.productDao()
     }
 }

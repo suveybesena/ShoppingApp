@@ -1,4 +1,4 @@
-package com.suveybesena.shoppingapp.presentation.productfeed.main
+package com.suveybesena.shoppingapp.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

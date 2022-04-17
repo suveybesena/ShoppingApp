@@ -1,19 +1,18 @@
 package com.suveybesena.shoppingapp.data.local
 
-
-import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.suveybesena.shoppingapp.data.remote.model.MakeupItemResponseItem
+import com.suveybesena.shoppingapp.data.model.ProductFeatures
+
 @Dao
 interface ProductDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertProduct (product : MakeupItemResponseItem) :Long
+    suspend fun insertProduct(product: ProductFeatures): Long
 
     @Query("SELECT * FROM products")
-     fun getAllProducts() : List<MakeupItemResponseItem>
+    fun getAllProducts(): MutableList<ProductFeatures>
 
-     @Delete
-     suspend fun deleteProducts(products: MakeupItemResponseItem)
+    @Delete
+    suspend fun deleteProduct(product: ProductFeatures)
 
 }
