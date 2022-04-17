@@ -1,19 +1,16 @@
-package com.suveybesena.shoppingapp.presentation.adapter
+package com.suveybesena.shoppingapp.presentation.basketfeed
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.suveybesena.shoppingapp.R
 import com.suveybesena.shoppingapp.common.downLoadImage
-import com.suveybesena.shoppingapp.presentation.productfeed.main.ProductFeatures
-import kotlinx.android.synthetic.main.basket_item.view.*
+import com.suveybesena.shoppingapp.data.model.ProductFeatures
+import com.suveybesena.shoppingapp.databinding.BasketItemBinding
 
-class BasketAdapter() : RecyclerView.Adapter<BasketAdapter.BasketVH>() {
-    class BasketVH(itemView: View) : RecyclerView.ViewHolder(itemView)
+class BasketFeedAdapter() : RecyclerView.Adapter<BasketFeedAdapter.BasketVH>() {
+    class BasketVH(val binding: BasketItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     private var differCallBack = object : DiffUtil.ItemCallback<ProductFeatures>() {
         override fun areItemsTheSame(
@@ -34,22 +31,20 @@ class BasketAdapter() : RecyclerView.Adapter<BasketAdapter.BasketVH>() {
     val differ = AsyncListDiffer(this, differCallBack)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BasketVH {
-        return BasketVH(
-            LayoutInflater.from(parent.context).inflate(R.layout.basket_item, parent, false)
-        )
+        val binding = BasketItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return BasketVH(binding)
     }
 
     override fun onBindViewHolder(holder: BasketVH, position: Int) {
-        val basketItems = differ.currentList[position]
-        holder.itemView.apply {
+        val basketItem = differ.currentList[position]
 
-            basketItems.productImage?.let { url->
+        holder.binding.apply {
+            basketItem.productImage?.let { url ->
                 ivBasketItem.downLoadImage(url)
             }
-            Glide.with(this).load(basketItems.productImage).into(ivBasketItem)
-            tvProductDesc.text = basketItems.productName
-            tvProductName.text = basketItems.productCategory
-            tvProductPrice.text = "$ ${basketItems.productPrice}"
+            tvProductDesc.text = basketItem.productName
+            tvProductName.text = basketItem.productCategory
+            tvProductPrice.text = "$ ${basketItem.productPrice}"
         }
     }
 
