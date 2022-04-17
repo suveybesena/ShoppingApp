@@ -1,6 +1,6 @@
-package com.suveybesena.shoppingapp.presentation.uistate
+package com.suveybesena.shoppingapp.presentation.basketfeed
 
-import com.suveybesena.shoppingapp.presentation.productfeed.main.ProductFeatures
+import com.suveybesena.shoppingapp.data.model.ProductFeatures
 
 data class BasketFeedUiState(
     val isLoading: Boolean = false,

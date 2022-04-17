@@ -1,6 +1,6 @@
-package com.suveybesena.shoppingapp.presentation.basket
+package com.suveybesena.shoppingapp.presentation.basketfeed
 
-import com.suveybesena.shoppingapp.presentation.productfeed.main.ProductFeatures
+import com.suveybesena.shoppingapp.data.model.ProductFeatures
 
 sealed class BasketFeedEvent {
     data class DeleteProduct(val product: ProductFeatures) : BasketFeedEvent()
