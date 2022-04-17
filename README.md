@@ -1,6 +1,5 @@
 # <a name="1"></a> App Architecture
-
-Bu readme, developer.android.com'ın App Architecture ile ilgili dokümanından aldığım notların kendi projem ile örneklendirilmiş halidir. 
+Bu projede, Android'in önerdiği modern mimariyi anlamaya ve uygulamaya çalıştım. 
 
 Projede kullandığım teknolojiler,
 <ul>
@@ -14,10 +13,9 @@ Projede kullandığım teknolojiler,
   <li>WebView</li>
   <li>View pager2</li>
     <li>View Binding</li>
- 
 </ul>
 
-
+<strong>Bu readme, developer.android.com'ın App Architecture ile ilgili dokümanından aldığım notların kendi projem ile örneklendirilmiş halidir. </strong>.
 
 
 ## <a name="2"></a> App Architecture
