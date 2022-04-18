@@ -182,7 +182,7 @@ class DeleteProductFromLocalUseCase @Inject constructor(val repository: Shopping
   
         }
   
-    }
+    }.flowOn(Dispatchers.IO)
   
 }
 
