@@ -75,6 +75,7 @@ class BasketFragment : Fragment() {
             viewModel._uiState.collect { uiState ->
                 uiState.basketFeedItems.let { savedItemList ->
                     basketFeedAdapter.differ.submitList(savedItemList)
+
                     var a = 0.0
                     savedItemList?.forEach { x ->
                         val price = x.productPrice?.toDouble()

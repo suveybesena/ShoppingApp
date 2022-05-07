@@ -12,11 +12,10 @@ class GetAllProductsFromLocalUseCase @Inject constructor(val repository: Shoppin
     suspend fun invoke() = flow {
         emit(Resource.Loading)
         try {
-            val getAllProducts = repository.getAllProductsFromLocal()
-            emit(Resource.Success(getAllProducts))
+            val allProducts = repository.getAllProductsFromLocal()
+            emit(Resource.Success(allProducts))
         } catch (e: Exception) {
             emit(Resource.Error(e.localizedMessage))
-            println(Resource.Error(e.localizedMessage))
         }
     }.flowOn(Dispatchers.IO)
 }

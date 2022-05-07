@@ -1,6 +1,11 @@
 package com.suveybesena.shoppingapp.domain.usecase
 
+import androidx.room.DatabaseConfiguration
+import androidx.room.InvalidationTracker
+import androidx.sqlite.db.SupportSQLiteOpenHelper
 import com.suveybesena.shoppingapp.common.Resource
+import com.suveybesena.shoppingapp.data.local.ProductDAO
+import com.suveybesena.shoppingapp.data.local.ProductDatabase
 import com.suveybesena.shoppingapp.data.repository.ShoppingRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
@@ -19,5 +24,4 @@ class GetEyelinerProductsFromRemoteUseCase @Inject constructor(var repository: S
         }
 
     }.flowOn(Dispatchers.IO)
-
 }

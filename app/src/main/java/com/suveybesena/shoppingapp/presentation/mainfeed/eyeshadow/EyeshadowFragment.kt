@@ -43,7 +43,7 @@ class EyeshadowFragment : Fragment() {
     }
 
     private fun observeData() {
-        viewModel.handleEvent(MainFeedEvent.GetMain)
+       viewModel.handleEvent(MainFeedEvent.GetMain)
         lifecycleScope.launch {
             viewModel.uiState.collect { state ->
                 state.eyeshadowItems.let { eyeshadowItemsList ->
