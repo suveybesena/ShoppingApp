@@ -1,4 +1,4 @@
-# <a name="1"></a> App Architecture
+# <a name="1"></a> Shopping App
 Bu projede, Android'in önerdiği modern mimariyi anlamaya ve uygulamaya çalıştım. 
 
 Projede kullandığım teknolojiler,
@@ -182,7 +182,7 @@ class DeleteProductFromLocalUseCase @Inject constructor(val repository: Shopping
   
         }
   
-    }
+    }.flowOn(Dispatchers.IO)
   
 }
 
