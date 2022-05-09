@@ -7,32 +7,39 @@ import androidx.test.filters.SmallTest
 import com.google.common.truth.Truth.assertThat
 import com.suveybesena.shoppingapp.data.model.ProductFeatures
 import com.suveybesena.shoppingapp.getOrAwaitValue
+import dagger.hilt.android.testing.HiltAndroidRule
+import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import javax.inject.Inject
+import javax.inject.Named
 
 @ExperimentalCoroutinesApi
 @SmallTest
+@HiltAndroidTest
 class ProductDaoTest {
 
     @get:Rule
     var instantTaskExecutorRole = InstantTaskExecutorRule()
+
+    @get:Rule
+    val hiltRule = HiltAndroidRule(this)
+
+    @Inject
+    @Named("testDatabase")
+    lateinit var database: ProductDatabase
+
+
     private lateinit var dao: ProductDAO
-    private lateinit var database: ProductDatabase
 
     @Before
     fun setup() {
-
-        database = Room.inMemoryDatabaseBuilder(
-            ApplicationProvider.getApplicationContext(),
-            ProductDatabase::class.java
-        ).allowMainThreadQueries().build()
-
+        hiltRule.inject()
         dao = database.productDao()
-
     }
 
 
