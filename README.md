@@ -13,6 +13,7 @@ Projede kullandığım teknolojiler,
   <li>WebView</li>
   <li>View pager2</li>
     <li>View Binding</li>
+  <li>Unit Test</li>
 </ul>
 
 <strong>Bu readme, developer.android.com'ın App Architecture ile ilgili dokümanından aldığım notların kendi projem ile örneklendirilmiş halidir. </strong>.
